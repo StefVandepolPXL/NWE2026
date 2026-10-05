@@ -1,5 +1,4 @@
 ```bash
-ip default-gateway 172.16.1.129
 ip domain name data.labnet.local
 crypto key generate rsa
 yes
