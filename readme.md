@@ -11,6 +11,7 @@ exit
 
 interface gigabitEthernet 0/0/0
 ip address 172.16.16.2 255.255.255.192
+no shutdown
 ```
 
 ```bash
