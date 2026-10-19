@@ -13,29 +13,29 @@ line vty 0 15
  login local
 exit
 
-ip default-gateway 172.16.17.2
+ip default-gateway 172.16.18.2
 
-vlan 117
+vlan 118
  name management
 vlan 99
  name native
 exit
 
-interface vlan 117
- ip address 172.16.17.4 255.255.255.192
+interface vlan 118
+ ip address 172.16.18.4 255.255.255.192
  no shutdown
 exit
 
 interface gigabitEthernet 1/0/1
  switchport mode access
- switchport access vlan 117
+ switchport access vlan 118
  spanning-tree portfast
 exit
 
 interface gigabitEthernet 1/0/2
  switchport mode trunk
  switchport trunk native vlan 99
- switchport trunk allowed vlan 99,117
+ switchport trunk allowed vlan 99,118
  spanning-tree link-type point-to-point
  no shutdown
 exit
@@ -65,14 +65,14 @@ interface gigabitEthernet 0/0/0.99
  encapsulation dot1Q 99 native
 exit
 
-interface gigabitEthernet 0/0/0.117
- encapsulation dot1Q 117
- ip address 172.16.17.2 255.255.255.192
+interface gigabitEthernet 0/0/0.118
+ encapsulation dot1Q 118
+ ip address 172.16.18.2 255.255.255.192
 exit
 ```
 
 ```bash
- New-NetIPAddress -InterfaceAlias "Ethernet" -IPAddress 172.16.17.10 -PrefixLength 26 -DefaultGateway 172.16.17.2
+ New-NetIPAddress -InterfaceAlias "Ethernet" -IPAddress 172.16.18.10 -PrefixLength 26 -DefaultGateway 172.16.18.2
 ```
 
 
